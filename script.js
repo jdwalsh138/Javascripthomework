@@ -1,10 +1,7 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Special characters for the function created
 const specialCharacters = "!@#$%^&*()";
 
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -13,10 +10,8 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// Prompts that come up after you click generate password
 function generatePassword() {
   var passwordLength = prompt("Please enter the number of characters you want for you new password.  It must be more than 12 but less than 128.");
 
@@ -28,11 +23,9 @@ function generatePassword() {
 
   var special = confirm("Do you want special characters in your password?");
 
-  // this is a minimum count for numbers, lowerCases, upperCases & specialCharacters
   var minimumCount = 0;
 
 
-  // Empty minimums for numbers, lowerCases, upperCases & specialCharacters
 
   var minimumNumbers = "";
   var minimumLowerCases = "";
@@ -59,7 +52,7 @@ function generatePassword() {
 
   ];
 
-  // Checks to make sure user selected ok for all and uses empty minimums from above
+ 
 
   if (numbers === true) {
     minimumNumbers = functionArray[0];
@@ -96,7 +89,6 @@ function generatePassword() {
 
   }
 
-  // to make sure characters are added to the password
   randomPasswordGenerated += minimumNumbers;
   randomPasswordGenerated += minimumLowerCases;
   randomPasswordGenerated += minimumUpperCases;
