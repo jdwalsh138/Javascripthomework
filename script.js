@@ -47,7 +47,7 @@ function generatePassword() {
     },
 
     function getSpecialCharacters() {
-      return specialCharacters(Math.floor(Math.random() * specialCharacters.length);
+      return specialCharacters(Math.floor(Math.random() * specialCharacters.length));
     }
 
   ];
