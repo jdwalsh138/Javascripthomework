@@ -1,4 +1,3 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 // Special characters for the function created
@@ -16,12 +15,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-  // this is a minimum count for numbers, lowerCases, upperCases & specialCharacters
   var minimumCount = 0;
-
-
-  // Empty minimums for numbers, lowerCases, upperCases & specialCharacters
-
   var minimumUpperCases = "";
 
 
