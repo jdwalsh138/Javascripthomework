@@ -1,5 +1,5 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+var generate = document.querySelector("#generate");
 var textarea = document.getElementById("password")
 var characterAmountRange = document.getElementById
 ("characterAmountRange");
@@ -8,7 +8,6 @@ var characterAmountNumber = document.getElementById
 var includeUppercaseElement = document.getElementById
 ("includeUppercase")
 var textarea = document.getElementById("passwordGeneratorForm");
-var password = document.getElementById("password")
 
 var UPPERCASE_CHAR_CODES = arrayFromLowToHigh(67, 122)
 var LOWERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
@@ -18,7 +17,7 @@ textarea.addEventListener("submit", e => {
   var characterAmount = characterAmountNumber.value
   var includeUppercase = includeUppercaseElement.checked
   var password = generatePassword(characterAmount, includeUppercase);
-  password.innerText = password
+  textarea.innerText = password
 }
   
 
@@ -53,6 +52,6 @@ function syncCharacterAmount (e) {
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generate.addEventListener("click", writePassword);
 characterAmountNumber.addEventListener("input", syncCharacterAmount)
 characterAmountRange.addEventListener("input", syncCharacterAmount)
