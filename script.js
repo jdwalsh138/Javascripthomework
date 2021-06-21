@@ -40,7 +40,6 @@ function generatePassword() {
   var minimumSpecialCharacters = "";
 
 
-  **// Generator functions**
   var functionArray = [
     function getNumbers() {
       return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
