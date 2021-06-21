@@ -1,3 +1,8 @@
+const characterAmountRange = document.getElementById
+('characterAmountRange')
+const characterAmountNumber = document.getElementById
+('characterAmountNumber')
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
