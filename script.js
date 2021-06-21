@@ -8,6 +8,8 @@ var characterAmountNumber = document.getElementById
 var includeUppercaseElement = document.getElementById
 ("includeUppercase")
 var textarea = document.getElementById("passwordGeneratorForm");
+var password = document.getElementById("password")
+
 var UPPERCASE_CHAR_CODES = arrayFromLowToHigh(67, 122)
 var LOWERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
 
@@ -16,13 +18,16 @@ textarea.addEventListener("submit", e => {
   var characterAmount = characterAmountNumber.value
   var includeUppercase = includeUppercaseElement.checked
   var password = generatePassword(characterAmount, includeUppercase);
+  password.innerText = password
+}
+  
 
 // Write password to the #password input
 function writePassword(characterAmount, includeUppercase) {
   let charCodes = LOWERCASE_CHAR_CODES
   if (includeUppercase) charCodes = charCodes.concat
   (UPPERCASE_CHAR_CODES)
-  var passwordText = document.querySelector("#password");
+}
   
   var passwordCharacters = []
   for (let i = 0; i < characterAmount, i++) {
@@ -51,5 +56,3 @@ function syncCharacterAmount (e) {
 generateBtn.addEventListener("click", writePassword);
 characterAmountNumber.addEventListener("input", syncCharacterAmount)
 characterAmountRange.addEventListener("input", syncCharacterAmount)
-
-})
