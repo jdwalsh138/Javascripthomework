@@ -16,7 +16,7 @@ textarea.addEventListener("submit", e => {
   var characterAmount = characterAmountNumber.value
   var includeUppercase = includeUppercaseElement.checked
   var password = generatePassword(characterAmount, includeUppercase);
-  textarea.innerText = password
+  password.text = password
 }
   
 
