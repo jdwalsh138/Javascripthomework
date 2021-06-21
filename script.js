@@ -7,7 +7,6 @@ var characterAmountNumber = document.getElementById
 ("characterAmountNumber");
 var includeUppercaseElement = document.getElementById
 ("includeUppercase")
-var textarea = document.getElementById("passwordGeneratorForm");
 
 var UPPERCASE_CHAR_CODES = arrayFromLowToHigh(67, 122)
 var LOWERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
@@ -34,7 +33,7 @@ function writePassword(characterAmount, includeUppercase) {
     characterAmount)]
     passwordCharacters.push (String.fromCharCode(charCodes))
     }
-  return passwordCharacters.join()
+  return passwordCharacters.join('')
 }
 
 function arrayFromLowToHigh(low, high) {
@@ -53,5 +52,5 @@ function syncCharacterAmount (e) {
 
 // Add event listener to generate button
 generate.addEventListener("click", writePassword);
-characterAmountNumber.addEventListener("input", syncCharacterAmount)
-characterAmountRange.addEventListener("input", syncCharacterAmount)
+characterAmountNumber.addEventListener("input", syncCharacterAmount);
+characterAmountRange.addEventListener("input", syncCharacterAmount);
