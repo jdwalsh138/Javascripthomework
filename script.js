@@ -1,5 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var specialcharacters = [!@#$%^&*]
+                      
 
 // Write password to the #password input
 function writePassword() {
@@ -94,6 +96,6 @@ function generatePassword() {
   randomPasswordGenerated += minimumSpecialCharacters;
 
 
-  return randomPasswordGenerated;
+  alert("randomPasswordGenerated");
 
 }
