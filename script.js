@@ -96,6 +96,6 @@ function generatePassword() {
   randomPasswordGenerated += minimumSpecialCharacters;
 
 
-  alert("randomPasswordGenerated");
+  return [randomPasswordGenerated]
 
 }
