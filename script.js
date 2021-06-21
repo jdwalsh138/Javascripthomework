@@ -1,5 +1,5 @@
 // Assignment Code
-var generate = document.querySelector("#generate");
+var generate = document.querySelector("generate");
 var textarea = document.getElementById("password")
 var characterAmountRange = document.getElementById
 ("characterAmountRange");
