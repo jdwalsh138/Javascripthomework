@@ -21,4 +21,4 @@ function writePassword(e) {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 characterAmountNumber.addEventListener("input", syncCharacterAmount)
-characterAmountRange.addEventListener("click", syncCharacterAmount)
+characterAmountRange.addEventListener("input", syncCharacterAmount)
