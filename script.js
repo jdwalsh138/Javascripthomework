@@ -1,6 +1,6 @@
 // Assignment Code
 var generate = document.getElementById("generate");
-var password = document.getElementById("password")
+var textarea = document.getElementById("passwordGeneratorForm")
 var characterAmountRange = document.getElementById
 ("characterAmountRange");
 var characterAmountNumber = document.getElementById
@@ -21,7 +21,7 @@ textarea.addEventListener("submit", e => {
   
 
 // Write password to the #password input
-function writePassword(characterAmount, includeUppercase) {
+function generatePassword(characterAmount, includeUppercase) {
   let charCodes = LOWERCASE_CHAR_CODES
   if (includeUppercase) charCodes = charCodes.concat
   (UPPERCASE_CHAR_CODES)
@@ -46,8 +46,8 @@ function arrayFromLowToHigh(low, high) {
 
 function syncCharacterAmount (e) {
   var value = e.target.value;
-  characterAmountNumber.value = value;
-  characterAmountRange.value = value;
+  characterAmountNumber.value = value
+  characterAmountRange.value = value
 
 
 // Add event listener to generate button
