@@ -2,7 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 // Special characters for the function created
-const specialCharacters = "!@#$%^&*()";
+var specialCharacters = "!@#$%^&*()";
 
 // Write password to the #password input
 function writePassword() {
