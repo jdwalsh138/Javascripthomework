@@ -1,6 +1,6 @@
 var generateBtn = document.querySelector("#generate");
 
-var specialCharacters = "!@#$%^&*()";
+const specialCharacters = "!@#$%^&*()";
 
 function writePassword() {
   var password = generatePassword();
