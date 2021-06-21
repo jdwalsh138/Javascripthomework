@@ -1,6 +1,6 @@
 var generateBtn = document.querySelector("#generate");
 
-const specialCharacters = "!@#$%^&*()";
+var specialCharacters = "!@#$%^&*()";
 
 function writePassword() {
   var password = generatePassword();
@@ -47,7 +47,7 @@ function generatePassword() {
     },
 
     function getSpecialCharacters() {
-      return specialCharacters(Math.floor(Math.random() * specialCharacters.length));
+      return specialCharacters(Math.floor(Math.random() * specialCharacters.length);
     }
 
   ];
@@ -78,10 +78,8 @@ function generatePassword() {
 
   }
 
-  // empty string variable for the for loop below
   var randomPasswordGenerated = "";
 
-  // loop getting random characters
   for (let i = 0; i < (parseInt(passwordLength) - minimumCount); i++) {
     var randomNumberPicked = Math.floor(Math.random() * 4);
 
