@@ -1,101 +1,59 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-var specialcharacters = [!@#$%^&*]
-                      
+const characterAmountRange = document.getElementById('characterAmountRange')
+const characterAmountNumber = document.getElementById('characterAmountNumber')
+const includeUppercaseElement = document.getElementById('includeUppercase')
+const includeNumbersElement = document.getElementById('includeNumbers')
+const includeSymbolsElement = document.getElementById('includeSymbols')
+const form = document.getElementById('passwordGeneratorForm')
+const passwordDisplay = document.getElementById('passwordDisplay')
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
+const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122)
+const NUMBER_CHAR_CODES = arrayFromLowToHigh(48, 57)
+const SYMBOL_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(
+  arrayFromLowToHigh(58, 64)
+).concat(
+  arrayFromLowToHigh(91, 96)
+).concat(
+  arrayFromLowToHigh(123, 126)
+)
 
-  passwordText.value = password;
+characterAmountNumber.addEventListener('input', syncCharacterAmount)
+characterAmountRange.addEventListener('input', syncCharacterAmount)
 
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  const characterAmount = characterAmountNumber.value
+  const includeUppercase = includeUppercaseElement.checked
+  const includeNumbers = includeNumbersElement.checked
+  const includeSymbols = includeSymbolsElement.checked
+  const password = generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols)
+  passwordDisplay.innerText = password
+})
+
+function generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols) {
+  let charCodes = LOWERCASE_CHAR_CODES
+  if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
+  if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES)
+  if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES)
+  
+  const passwordCharacters = []
+  for (let i = 0; i < characterAmount; i++) {
+    const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
+    passwordCharacters.push(String.fromCharCode(characterCode))
+  }
+  return passwordCharacters.join('')
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-function generatePassword() {
-  var passwordLength = prompt("Please enter the number of characters you want for you new password.  It must be more than 12 but less than 128.");
-
-  var numbers = confirm("Do you want numbers in your password?");
-
-  var lowerCases = confirm("Do you want lowercases in your password?");
-
-  var upperCases = confirm("Do you want uppercases in your password?");
-
-  var special = confirm("Do you want special characters in your password?");
-
-  var minimumCount = 0;
-
-
-
-  var minimumNumbers = "";
-  var minimumLowerCases = "";
-  var minimumUpperCases = "";
-  var minimumSpecialCharacters = "";
-
-
-  var functionArray = [
-    function getNumbers() {
-      return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
-    },
-
-    function getLowerCases() {
-      return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
-    },
-
-    function getUpperCases() {
-      return +String.fromCharCode(Math.floor(Math.random() * 26 + 65));
-    },
-
-    function getSpecialCharacters() {
-      return specialCharacters(Math.floor(Math.random() * specialCharacters.length));
-    }
-
-  ];
-
- 
-
-  if (numbers === true) {
-    minimumNumbers = functionArray[0];
-    minimumCount++;
-
+function arrayFromLowToHigh(low, high) {
+  const array = []
+  for (let i = low; i <= high; i++) {
+    array.push(i)
   }
+  return array
+}
 
-  if (lowerCases === true) {
-    minimumLowerCases = functionArray[1];
-    minimumCount++;
-
-  }
-
-  if (upperCases === true) {
-    minimumUpperCases = functionArray[2];
-    minimumCount++;
-
-  }
-
-  if (special === true) {
-    minimumSpecialCharacters = functionArray[3];
-    minimumCount++;
-
-  }
-
-  var randomPasswordGenerated = "";
-
-  for (let i = 0; i < (parseInt(passwordLength) - minimumCount); i++) {
-    var randomNumberPicked = Math.floor(Math.random() * 4);
-
-    randomPasswordGenerated += functionArray[randomNumberPicked]();
-
-  }
-
-  randomPasswordGenerated += minimumNumbers;
-  randomPasswordGenerated += minimumLowerCases;
-  randomPasswordGenerated += minimumUpperCases;
-  randomPasswordGenerated += minimumSpecialCharacters;
-
-
-  return [randomPasswordGenerated]
-
+function syncCharacterAmount(e) {
+  const value = e.target.value
+  characterAmountNumber.value = value
+  characterAmountRange.value = value
 }
