@@ -1,6 +1,8 @@
 # 03 JavaScript: Password Generator
 
-## Your Task
+https://jdwalsh138.github.io/Javascripthomework/
+
+## The Task
 
 This week’s homework requires you to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
 
@@ -40,53 +42,26 @@ The following image shows the web application's appearance and functionality:
 
 ![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
 
-## Grading Requirements
 
-This homework is graded based on the following criteria: 
+## Update
 
-### Technical Acceptance Criteria: 40%
+4/7/21 v2 released
 
-* Satisfies all of the preceding acceptance criteria plus the following:
+## Git Repository 
 
-  * The homework should not produce any errors in the console when you inspect it using Chrome DevTools.
+https://github.com/jdwalsh138/Javascripthomework.git
 
-### Deployment: 32%
+## Bugs and Feedback
+For bugs, questions and discussions please use the Github Issues.
 
-* Application deployed at live URL.
+## License
 
-* Application loads with no errors.
+## Requirements
+Java 1.7+
 
-* Application GitHub URL submitted.
+# Creator
 
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
+Jack Walsh
 
 - - -
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
